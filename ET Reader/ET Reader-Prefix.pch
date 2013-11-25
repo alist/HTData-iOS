@@ -14,3 +14,22 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define kBLEShieldServiceUUIDString @"EF080D8C-C3BE-41FF-BD3F-05A5F4795D7F"
+#define kBLEShieldCharacteristicRXUUIDString @"A1E8F5B1-696B-4E4C-87C6-69DFE0B0093B"
+#define kBLEShieldCharacteristicTXUUIDString @"1494440E-9A58-4CC0-81E4-DDEA7F74F623"
+
+#define DEBUG_MODE_ENABLED 1
+#define CONFIGURATION Debug
+
+#if DEBUG_MODE_ENABLED == 1
+#if CONFIGURATION == Debug
+#warning verbose outputs enabled-- DEBUG_MODE_ENABLED logmode on
+#else
+#error verbose outputs, eg EXOLog, enabled-- exoLib DEBUG_MODE_ENABLED == 1
+#endif
+#define EXOLog NSLog
+#else
+#define EXOLog(format, ...)
+#endif

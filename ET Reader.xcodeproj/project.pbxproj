@@ -22,6 +22,8 @@
 		7975A0381842EDD900CD4CCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0171842EDD900CD4CCC /* UIKit.framework */; };
 		7975A0401842EDD900CD4CCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7975A03E1842EDD900CD4CCC /* InfoPlist.strings */; };
 		7975A0421842EDD900CD4CCC /* ET_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */; };
+		7975A04C1842EE5C00CD4CCC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */; };
+		7975A0531842EFD300CD4CCC /* ETBTLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0521842EFD300CD4CCC /* ETBTLEManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		7975A03D1842EDD900CD4CCC /* ET ReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ET ReaderTests-Info.plist"; sourceTree = "<group>"; };
 		7975A03F1842EDD900CD4CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ET_ReaderTests.m; sourceTree = "<group>"; };
+		7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		7975A0511842EFD300CD4CCC /* ETBTLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBTLEManager.h; sourceTree = "<group>"; };
+		7975A0521842EFD300CD4CCC /* ETBTLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETBTLEManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 			files = (
 				7975A0161842EDD900CD4CCC /* CoreGraphics.framework in Frameworks */,
 				7975A0181842EDD900CD4CCC /* UIKit.framework in Frameworks */,
+				7975A04C1842EE5C00CD4CCC /* CoreBluetooth.framework in Frameworks */,
 				7975A0141842EDD900CD4CCC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +109,7 @@
 		7975A0121842EDD900CD4CCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */,
 				7975A0131842EDD900CD4CCC /* Foundation.framework */,
 				7975A0151842EDD900CD4CCC /* CoreGraphics.framework */,
 				7975A0171842EDD900CD4CCC /* UIKit.framework */,
@@ -114,6 +121,7 @@
 		7975A0191842EDD900CD4CCC /* ET Reader */ = {
 			isa = PBXGroup;
 			children = (
+				7975A04D1842EED000CD4CCC /* BTLE Frameworks */,
 				7975A0221842EDD900CD4CCC /* ETAppDelegate.h */,
 				7975A0231842EDD900CD4CCC /* ETAppDelegate.m */,
 				7975A0251842EDD900CD4CCC /* Main_iPhone.storyboard */,
@@ -153,6 +161,15 @@
 				7975A03E1842EDD900CD4CCC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7975A04D1842EED000CD4CCC /* BTLE Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7975A0511842EFD300CD4CCC /* ETBTLEManager.h */,
+				7975A0521842EFD300CD4CCC /* ETBTLEManager.m */,
+			);
+			name = "BTLE Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +273,7 @@
 			files = (
 				7975A02D1842EDD900CD4CCC /* ETViewController.m in Sources */,
 				7975A0201842EDD900CD4CCC /* main.m in Sources */,
+				7975A0531842EFD300CD4CCC /* ETBTLEManager.m in Sources */,
 				7975A0241842EDD900CD4CCC /* ETAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +493,7 @@
 				7975A0471842EDD900CD4CCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7975A0481842EDD900CD4CCC /* Build configuration list for PBXNativeTarget "ET ReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +502,7 @@
 				7975A04A1842EDD900CD4CCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
