@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7975A0141842EDD900CD4CCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0131842EDD900CD4CCC /* Foundation.framework */; };
+		7975A0161842EDD900CD4CCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0151842EDD900CD4CCC /* CoreGraphics.framework */; };
+		7975A0181842EDD900CD4CCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0171842EDD900CD4CCC /* UIKit.framework */; };
+		7975A01E1842EDD900CD4CCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7975A01C1842EDD900CD4CCC /* InfoPlist.strings */; };
+		7975A0201842EDD900CD4CCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A01F1842EDD900CD4CCC /* main.m */; };
+		7975A0241842EDD900CD4CCC /* ETAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0231842EDD900CD4CCC /* ETAppDelegate.m */; };
+		7975A0271842EDD900CD4CCC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7975A0251842EDD900CD4CCC /* Main_iPhone.storyboard */; };
+		7975A02A1842EDD900CD4CCC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7975A0281842EDD900CD4CCC /* Main_iPad.storyboard */; };
+		7975A02D1842EDD900CD4CCC /* ETViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A02C1842EDD900CD4CCC /* ETViewController.m */; };
+		7975A02F1842EDD900CD4CCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7975A02E1842EDD900CD4CCC /* Images.xcassets */; };
+		7975A0361842EDD900CD4CCC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0351842EDD900CD4CCC /* XCTest.framework */; };
+		7975A0371842EDD900CD4CCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0131842EDD900CD4CCC /* Foundation.framework */; };
+		7975A0381842EDD900CD4CCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0171842EDD900CD4CCC /* UIKit.framework */; };
+		7975A0401842EDD900CD4CCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7975A03E1842EDD900CD4CCC /* InfoPlist.strings */; };
+		7975A0421842EDD900CD4CCC /* ET_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7975A0391842EDD900CD4CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7975A0081842EDD900CD4CCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7975A00F1842EDD900CD4CCC;
+			remoteInfo = "ET Reader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7975A0101842EDD900CD4CCC /* ET Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ET Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7975A0131842EDD900CD4CCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7975A0151842EDD900CD4CCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7975A0171842EDD900CD4CCC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7975A01B1842EDD900CD4CCC /* ET Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ET Reader-Info.plist"; sourceTree = "<group>"; };
+		7975A01D1842EDD900CD4CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7975A01F1842EDD900CD4CCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7975A0211842EDD900CD4CCC /* ET Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ET Reader-Prefix.pch"; sourceTree = "<group>"; };
+		7975A0221842EDD900CD4CCC /* ETAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAppDelegate.h; sourceTree = "<group>"; };
+		7975A0231842EDD900CD4CCC /* ETAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAppDelegate.m; sourceTree = "<group>"; };
+		7975A0261842EDD900CD4CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		7975A0291842EDD900CD4CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		7975A02B1842EDD900CD4CCC /* ETViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETViewController.h; sourceTree = "<group>"; };
+		7975A02C1842EDD900CD4CCC /* ETViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETViewController.m; sourceTree = "<group>"; };
+		7975A02E1842EDD900CD4CCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7975A0341842EDD900CD4CCC /* ET ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ET ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7975A0351842EDD900CD4CCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7975A03D1842EDD900CD4CCC /* ET ReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ET ReaderTests-Info.plist"; sourceTree = "<group>"; };
+		7975A03F1842EDD900CD4CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ET_ReaderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7975A00D1842EDD900CD4CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A0161842EDD900CD4CCC /* CoreGraphics.framework in Frameworks */,
+				7975A0181842EDD900CD4CCC /* UIKit.framework in Frameworks */,
+				7975A0141842EDD900CD4CCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7975A0311842EDD900CD4CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A0361842EDD900CD4CCC /* XCTest.framework in Frameworks */,
+				7975A0381842EDD900CD4CCC /* UIKit.framework in Frameworks */,
+				7975A0371842EDD900CD4CCC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7975A0071842EDD900CD4CCC = {
+			isa = PBXGroup;
+			children = (
+				7975A0191842EDD900CD4CCC /* ET Reader */,
+				7975A03B1842EDD900CD4CCC /* ET ReaderTests */,
+				7975A0121842EDD900CD4CCC /* Frameworks */,
+				7975A0111842EDD900CD4CCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7975A0111842EDD900CD4CCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7975A0101842EDD900CD4CCC /* ET Reader.app */,
+				7975A0341842EDD900CD4CCC /* ET ReaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7975A0121842EDD900CD4CCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7975A0131842EDD900CD4CCC /* Foundation.framework */,
+				7975A0151842EDD900CD4CCC /* CoreGraphics.framework */,
+				7975A0171842EDD900CD4CCC /* UIKit.framework */,
+				7975A0351842EDD900CD4CCC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7975A0191842EDD900CD4CCC /* ET Reader */ = {
+			isa = PBXGroup;
+			children = (
+				7975A0221842EDD900CD4CCC /* ETAppDelegate.h */,
+				7975A0231842EDD900CD4CCC /* ETAppDelegate.m */,
+				7975A0251842EDD900CD4CCC /* Main_iPhone.storyboard */,
+				7975A0281842EDD900CD4CCC /* Main_iPad.storyboard */,
+				7975A02B1842EDD900CD4CCC /* ETViewController.h */,
+				7975A02C1842EDD900CD4CCC /* ETViewController.m */,
+				7975A02E1842EDD900CD4CCC /* Images.xcassets */,
+				7975A01A1842EDD900CD4CCC /* Supporting Files */,
+			);
+			path = "ET Reader";
+			sourceTree = "<group>";
+		};
+		7975A01A1842EDD900CD4CCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7975A01B1842EDD900CD4CCC /* ET Reader-Info.plist */,
+				7975A01C1842EDD900CD4CCC /* InfoPlist.strings */,
+				7975A01F1842EDD900CD4CCC /* main.m */,
+				7975A0211842EDD900CD4CCC /* ET Reader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7975A03B1842EDD900CD4CCC /* ET ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */,
+				7975A03C1842EDD900CD4CCC /* Supporting Files */,
+			);
+			path = "ET ReaderTests";
+			sourceTree = "<group>";
+		};
+		7975A03C1842EDD900CD4CCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7975A03D1842EDD900CD4CCC /* ET ReaderTests-Info.plist */,
+				7975A03E1842EDD900CD4CCC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7975A00F1842EDD900CD4CCC /* ET Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7975A0451842EDD900CD4CCC /* Build configuration list for PBXNativeTarget "ET Reader" */;
+			buildPhases = (
+				7975A00C1842EDD900CD4CCC /* Sources */,
+				7975A00D1842EDD900CD4CCC /* Frameworks */,
+				7975A00E1842EDD900CD4CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ET Reader";
+			productName = "ET Reader";
+			productReference = 7975A0101842EDD900CD4CCC /* ET Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7975A0331842EDD900CD4CCC /* ET ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7975A0481842EDD900CD4CCC /* Build configuration list for PBXNativeTarget "ET ReaderTests" */;
+			buildPhases = (
+				7975A0301842EDD900CD4CCC /* Sources */,
+				7975A0311842EDD900CD4CCC /* Frameworks */,
+				7975A0321842EDD900CD4CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7975A03A1842EDD900CD4CCC /* PBXTargetDependency */,
+			);
+			name = "ET ReaderTests";
+			productName = "ET ReaderTests";
+			productReference = 7975A0341842EDD900CD4CCC /* ET ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7975A0081842EDD900CD4CCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ET;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "ET Ears Group, Inc (MIT LICENSE)";
+				TargetAttributes = {
+					7975A0331842EDD900CD4CCC = {
+						TestTargetID = 7975A00F1842EDD900CD4CCC;
+					};
+				};
+			};
+			buildConfigurationList = 7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "ET Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7975A0071842EDD900CD4CCC;
+			productRefGroup = 7975A0111842EDD900CD4CCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7975A00F1842EDD900CD4CCC /* ET Reader */,
+				7975A0331842EDD900CD4CCC /* ET ReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7975A00E1842EDD900CD4CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A02A1842EDD900CD4CCC /* Main_iPad.storyboard in Resources */,
+				7975A02F1842EDD900CD4CCC /* Images.xcassets in Resources */,
+				7975A0271842EDD900CD4CCC /* Main_iPhone.storyboard in Resources */,
+				7975A01E1842EDD900CD4CCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7975A0321842EDD900CD4CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A0401842EDD900CD4CCC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7975A00C1842EDD900CD4CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A02D1842EDD900CD4CCC /* ETViewController.m in Sources */,
+				7975A0201842EDD900CD4CCC /* main.m in Sources */,
+				7975A0241842EDD900CD4CCC /* ETAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7975A0301842EDD900CD4CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7975A0421842EDD900CD4CCC /* ET_ReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7975A03A1842EDD900CD4CCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7975A00F1842EDD900CD4CCC /* ET Reader */;
+			targetProxy = 7975A0391842EDD900CD4CCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7975A01C1842EDD900CD4CCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7975A01D1842EDD900CD4CCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7975A0251842EDD900CD4CCC /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7975A0261842EDD900CD4CCC /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		7975A0281842EDD900CD4CCC /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7975A0291842EDD900CD4CCC /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		7975A03E1842EDD900CD4CCC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7975A03F1842EDD900CD4CCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7975A0431842EDD900CD4CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7975A0441842EDD900CD4CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7975A0461842EDD900CD4CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ET Reader/ET Reader-Prefix.pch";
+				INFOPLIST_FILE = "ET Reader/ET Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7975A0471842EDD900CD4CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ET Reader/ET Reader-Prefix.pch";
+				INFOPLIST_FILE = "ET Reader/ET Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7975A0491842EDD900CD4CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ET Reader.app/ET Reader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ET Reader/ET Reader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ET ReaderTests/ET ReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7975A04A1842EDD900CD4CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ET Reader.app/ET Reader";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ET Reader/ET Reader-Prefix.pch";
+				INFOPLIST_FILE = "ET ReaderTests/ET ReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "ET Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7975A0431842EDD900CD4CCC /* Debug */,
+				7975A0441842EDD900CD4CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7975A0451842EDD900CD4CCC /* Build configuration list for PBXNativeTarget "ET Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7975A0461842EDD900CD4CCC /* Debug */,
+				7975A0471842EDD900CD4CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7975A0481842EDD900CD4CCC /* Build configuration list for PBXNativeTarget "ET ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7975A0491842EDD900CD4CCC /* Debug */,
+				7975A04A1842EDD900CD4CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7975A0081842EDD900CD4CCC /* Project object */;
+}
