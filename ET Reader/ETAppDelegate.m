@@ -10,9 +10,42 @@
 
 @implementation ETAppDelegate
 
+
+-(ETBTLEManager*) btleManager{
+    if (_btleManager == nil){
+        _btleManager = [[ETBTLEManager alloc] init];
+        [_btleManager setDelegate:self];
+    }
+    return _btleManager;
+}
+
+
+
+-(void) ETViewControllerWantsSetConnectedOn:(BOOL)yesConnect withVC:(ETViewController*)vc{
+    if (yesConnect){
+        [self.btleManager connectPeripheral];
+    }else{
+        [self.btleManager disconnectPeripheral];
+    }
+}
+
+-(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager{
+    NSString * dataString = [[NSString alloc] initWithData:yieldedData encoding:NSUTF8StringEncoding];
+    [self.etVC addDataStringToView:dataString];
+}
+
+#pragma mark - boring stuff
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //UINavigationController *navigationController = (UINavigationController*) self.window.rootViewController;
+    // [[navigationController viewControllers] objectAtIndex:0];
+    self.etVC = (ETViewController *) self.window.rootViewController;
+    [self.etVC setDelegate:self];
+    
+    [self.btleManager start];
     return YES;
 }
 							
@@ -26,11 +59,14 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    EXOLog(@"backgrounded! %@",@"YAH");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    EXOLog(@"foregrounded! %@",@"YAH");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

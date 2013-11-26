@@ -12,12 +12,30 @@
 
 -(void) start{
     self.cbManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
-    self.shields = [NSMutableSet set];
     
     EXOLog(@"startScan");
     NSArray	*uuidArray = [NSArray arrayWithObject:[CBUUID UUIDWithString:kBLEShieldServiceUUIDString]];
 	NSDictionary *options = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
     [self.cbManager scanForPeripheralsWithServices:uuidArray options:options];
+}
+
+-(void) connectPeripheral{
+    if (self.peripherals.count >0)
+        [self.cbManager connectPeripheral:[self.peripherals anyObject] options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
+}
+
+-(void) disconnectPeripheral{
+    if (self.connectedPeripheral != nil && [self.connectedPeripheral state] != CBPeripheralStateDisconnected){
+         [self.cbManager cancelPeripheralConnection:self.connectedPeripheral];
+    }
+}
+
+-(NSMutableSet*) peripherals{
+    if (_peripherals == nil){
+        _peripherals = [NSMutableSet set];
+    }
+    
+    return _peripherals;
 }
 
 #pragma mark -
@@ -76,7 +94,8 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
     EXOLog(@"Discovered: %@", peripheral.name);
     
-    [self.shields addObject:peripheral];
+    [self.peripherals addObject:peripheral];
+    
 }
 
 /*
@@ -88,9 +107,9 @@
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     EXOLog(@"didConnectPeripheral %@",peripheral);
     
-    self.connectedShield = peripheral;
-    self.connectedShield.delegate = self;
-    [self.connectedShield discoverServices:nil];
+    self.connectedPeripheral = peripheral;
+    self.connectedPeripheral.delegate = self;
+    [self.connectedPeripheral discoverServices:nil];
 }
 
 /*
@@ -102,6 +121,7 @@
  */
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     EXOLog(@"didFailToConnectPeripheral %@",peripheral);
+    
 //    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_CONNECT_BLE_SHIELD_FAILURE object:peripheral];
 }
 
@@ -113,20 +133,20 @@
  */
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     EXOLog(@"didDisconnectPeripheral %@",peripheral);
+    
+    if (self.connectedPeripheral == peripheral){
+        self.connectedPeripheral = nil;
+    }
+    
     if (error != nil) {
-//        NSArray *disconnectFailureArray = [NSArray arrayWithObjects:error, peripheral, nil];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_DISCONNECT_BLE_SHIELD_FAILURE object:disconnectFailureArray];
-        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Disconnect Error", @"") message:error.localizedDescription delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"") otherButtonTitles: nil];
         [alert show];
     }
     else {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_DISCONNECT_BLE_SHIELD_SUCCESS object:peripheral];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Disconnected", @"") message:peripheral.name delegate:self cancelButtonTitle:NSLocalizedString(@"OK",@"") otherButtonTitles: nil];
         [alert show];
     }
-//    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_START_SCAN_FOR_BLE_SHIELDS object:nil];
 }
 
 
@@ -134,7 +154,7 @@
 #pragma mark peripherals
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
-    EXOLog(@"");
+    EXOLog(@"didDiscoverServices");
     
     for (CBService *service in peripheral.services ) {
         
@@ -142,7 +162,7 @@
         
         if ([service.UUID isEqual:serviceUUID]) {
             EXOLog(@"Discovering Characteristics for service: %@", serviceUUID);
-            [self.connectedShield discoverCharacteristics:nil forService:service];
+            [self.connectedPeripheral discoverCharacteristics:nil forService:service];
         }
     }
 
@@ -151,7 +171,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
     EXOLog(@"didDiscoverCharacteristicsForService %@",service);
 
-    [ETBTLEManager setNotificationForCharacteristic:self.connectedShield sUUID:kBLEShieldServiceUUIDString cUUID:kBLEShieldCharacteristicRXUUIDString enable:YES];
+    [ETBTLEManager setNotificationForCharacteristic:self.connectedPeripheral sUUID:kBLEShieldServiceUUIDString cUUID:kBLEShieldCharacteristicRXUUIDString enable:YES];
 }
 
 /*
@@ -167,11 +187,14 @@
     EXOLog(@"didUpdateValueForCharacteristic %@",characteristic);
     
     
-    NSDate *date = [NSDate date];
+    //NSDate *date = [NSDate date];
     NSData *data = [characteristic value];
     
     NSString * dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
+    EXOLog(@"Data: %@", dataString);
+    
+    [self.delegate managerYieldedData:data withManager:self];
 }
 
 /*
@@ -184,7 +207,7 @@
  *  @discussion				This method returns the result of a @link writeValue:forCharacteristic: @/link call.
  */
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    BtLog(@"");
+    EXOLog(@"didWriteValueForCharacteristic %@", characteristic);
 }
 
 /*
@@ -197,7 +220,7 @@
  *  @discussion				This method returns the result of a @link setNotifyValue:forCharacteristic: @/link call.
  */
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    BtLog(@"");
+    EXOLog(@"didUpdateNotificationStateForCharacteristic %@", characteristic);
 }
 
 

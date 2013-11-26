@@ -26,4 +26,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)connectedSwitchFlipped:(UISwitch*)senderSwitch {
+    
+    [self.delegate ETViewControllerWantsSetConnectedOn:[senderSwitch isOn] withVC:self];
+}
+
+- (IBAction)clearViewTapGestureRecognized:(id)sender{
+    [self.outputView setText:@""];
+} 
+
+
+-(void) addDataStringToView:(NSString*)dataString{
+    self.outputView.text = [self.outputView.text stringByAppendingString: dataString];
+//    CGPoint bottomOffset = CGPointMake(0, self.outputView.contentSize.height - self.outputView.bounds.size.height);
+//    [self.outputView setContentOffset:bottomOffset animated:FALSE];
+}
 @end

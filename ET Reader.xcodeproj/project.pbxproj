@@ -121,13 +121,12 @@
 		7975A0191842EDD900CD4CCC /* ET Reader */ = {
 			isa = PBXGroup;
 			children = (
+				79ECB9901843D40700078952 /* Views */,
 				7975A04D1842EED000CD4CCC /* BTLE Frameworks */,
 				7975A0221842EDD900CD4CCC /* ETAppDelegate.h */,
 				7975A0231842EDD900CD4CCC /* ETAppDelegate.m */,
 				7975A0251842EDD900CD4CCC /* Main_iPhone.storyboard */,
 				7975A0281842EDD900CD4CCC /* Main_iPad.storyboard */,
-				7975A02B1842EDD900CD4CCC /* ETViewController.h */,
-				7975A02C1842EDD900CD4CCC /* ETViewController.m */,
 				7975A02E1842EDD900CD4CCC /* Images.xcassets */,
 				7975A01A1842EDD900CD4CCC /* Supporting Files */,
 			);
@@ -170,6 +169,15 @@
 				7975A0521842EFD300CD4CCC /* ETBTLEManager.m */,
 			);
 			name = "BTLE Frameworks";
+			sourceTree = "<group>";
+		};
+		79ECB9901843D40700078952 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7975A02B1842EDD900CD4CCC /* ETViewController.h */,
+				7975A02C1842EDD900CD4CCC /* ETViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +228,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "ET Ears Group, Inc (MIT LICENSE)";
 				TargetAttributes = {
+					7975A00F1842EDD900CD4CCC = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					7975A0331842EDD900CD4CCC = {
 						TestTargetID = 7975A00F1842EDD900CD4CCC;
 					};
