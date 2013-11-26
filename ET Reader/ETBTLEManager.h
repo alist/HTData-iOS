@@ -8,10 +8,13 @@
 
 @class ETBTLEManager;
 
-@protocol ETBTLEManagerDelegate <NSObject>
+
+@protocol ETBTLEManagerDataDelegate <NSObject>
 -(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager;
 
+@end
 
+@protocol ETBTLEManagerDelegate <NSObject>
 @optional // and in fact, unimplimented!
 //for peripherals
 -(void ) managerDidConnect:(ETBTLEManager*)manager;
@@ -29,7 +32,8 @@
 
 @interface ETBTLEManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
-@property (nonatomic, weak) id<ETBTLEManagerDelegate> delegate; 
+@property (nonatomic, weak) id<ETBTLEManagerDelegate> delegate;
+@property (nonatomic, weak) id<ETBTLEManagerDataDelegate> dataDelegate;
 
 @property (strong, nonatomic) CBCentralManager *cbManager;
 @property (strong, nonatomic) NSMutableSet *peripherals;
@@ -39,6 +43,7 @@
 -(void) connectPeripheral;
 -(void) disconnectPeripheral;
 
+-(void) sendDataToPeripheral:(NSData*)data;
 
 +(void)readCharacteristic:(CBPeripheral *)peripheral sUUID:(NSString *)sUUID cUUID:(NSString *)cUUID;
 +(void)setNotificationForCharacteristic:(CBPeripheral *)peripheral sUUID:(NSString *)sUUID cUUID:(NSString *)cUUID enable:(BOOL)enable;

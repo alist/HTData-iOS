@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETBTLEManager.h"
 
 @class ETViewController;
 
@@ -18,17 +19,19 @@
 
 @end
 
-@interface ETViewController : UIViewController
+@interface ETViewController : UIViewController <ETBTLEManagerDataDelegate>
 
 @property (nonatomic, assign)BOOL canConnect;
 @property (nonatomic, weak) id<ETViewControllerDelegate> delegate;
 
+@property (strong, nonatomic) ETBTLEManager* btleManager;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *outputView;
 @property (weak, nonatomic) IBOutlet UISwitch *connectedSwitch;
 - (IBAction)connectedSwitchFlipped:(id)sender;
 - (IBAction)clearViewTapGestureRecognized:(id)sender;
+- (IBAction)versionRequestButtonPressed:(id)sender;
 
 -(void) addDataStringToView:(NSString*)dataString;
 

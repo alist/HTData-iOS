@@ -14,6 +14,14 @@
 
 @implementation ETViewController
 
+
+
+-(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager{
+    NSString * dataString = [[NSString alloc] initWithData:yieldedData encoding:NSUTF8StringEncoding];
+    [self addDataStringToView:dataString];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,6 +42,10 @@
 - (IBAction)clearViewTapGestureRecognized:(id)sender{
     [self.outputView setText:@""];
 } 
+
+- (IBAction)versionRequestButtonPressed:(id)sender {
+    [self.btleManager sendDataToPeripheral:[@"version;" dataUsingEncoding:NSUTF8StringEncoding ]];
+}
 
 
 -(void) addDataStringToView:(NSString*)dataString{

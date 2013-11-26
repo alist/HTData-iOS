@@ -29,11 +29,6 @@
     }
 }
 
--(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager{
-    NSString * dataString = [[NSString alloc] initWithData:yieldedData encoding:NSUTF8StringEncoding];
-    [self.etVC addDataStringToView:dataString];
-}
-
 #pragma mark - boring stuff
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -44,6 +39,8 @@
     // [[navigationController viewControllers] objectAtIndex:0];
     self.etVC = (ETViewController *) self.window.rootViewController;
     [self.etVC setDelegate:self];
+    [self.etVC setBtleManager:self.btleManager];
+    [self.btleManager setDataDelegate:self.etVC];
     
     [self.btleManager start];
     return YES;

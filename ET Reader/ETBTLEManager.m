@@ -38,6 +38,22 @@
     return _peripherals;
 }
 
+-(void) sendDataToPeripheral:(NSData*)data{
+    if (!data){
+        EXOLog(@"Send error %@", @"no data to send");
+        return;
+    }else
+    
+    if ([self.connectedPeripheral state] == CBPeripheralStateConnected){
+        [ETBTLEManager writeCharacteristic:self.connectedPeripheral sUUID:kBLEShieldServiceUUIDString cUUID:kBLEShieldCharacteristicTXUUIDString data:data];
+        
+        EXOLog(@"sent that datas %@", data);
+    }else{
+        EXOLog(@"Send error %@", @"no connected peripheral");
+    }
+
+}
+
 #pragma mark -
 #pragma mark CBCentralManagerDelegate methods
 
@@ -194,7 +210,7 @@
     
     EXOLog(@"Data: %@", dataString);
     
-    [self.delegate managerYieldedData:data withManager:self];
+    [self.dataDelegate managerYieldedData:data withManager:self];
 }
 
 /*
