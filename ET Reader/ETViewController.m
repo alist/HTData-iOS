@@ -67,6 +67,27 @@
 - (IBAction)versionRequestButtonPressed:(id)sender {
     [self.btleManager sendDataToPeripheral:[@"version;" dataUsingEncoding:NSUTF8StringEncoding ]];
 }
+
+- (IBAction)flagButtonPressed:(id)sender {
+    [self.dataManager setNextDataPointFlag:ETDataFlagNormal];
+}
+
+- (IBAction)exportButtonPressed:(id)sender {
+    
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    // The file extension is important so that some mime magic happens!
+    NSString *filePath = [docsPath stringByAppendingPathComponent:@"examresults.csv"];
+    NSURL *fileUrl     = [NSURL fileURLWithPath:filePath];
+    
+    [[[self.dataManager rawCSVString] dataUsingEncoding:NSUTF8StringEncoding] writeToURL:fileUrl atomically:YES]; // save the file
+    
+    
+//    __weak ETViewController * thisVC = self;
+    NSString * resultsDateString = [NSString stringWithFormat:NSLocalizedString(@"ET Exam Results from %@", @"resultsDateString"), [NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]];
+    UIActivityViewController * activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[resultsDateString,fileUrl] applicationActivities:nil];
+    [self presentViewController:activityVC animated:TRUE completion:nil];
+
+}
 - (IBAction)makeSessionActiveButtonPressed:(id)sender {
     [self.btleManager sendDataToPeripheral:[@"startSession;" dataUsingEncoding:NSUTF8StringEncoding ]];
 }
@@ -85,11 +106,23 @@
 //ETDataManagerDelegate
 -(void)ETDataManagerDelegateDidUpdateData:(ETDataManager*)dataManager{
     NSArray * lines = [dataManager.rawCSVString componentsSeparatedByString:@"\n"];
-    NSInteger max50LineCount = MIN(50, lines.count);
+    NSInteger max50LineCount = MIN(30, lines.count);
     NSArray * lastLines = [lines subarrayWithRange:NSMakeRange(lines.count - max50LineCount, max50LineCount)];
     NSString * lastLinesString = [lastLines componentsJoinedByString:@"\n"];
     
     self.outputView.text = lastLinesString;
 
 }
+
+//UIActivityItemSource //maybe not even needed
+// called to determine data type. only the class of the return type is consulted. it should match what -itemForActivityType: returns later
+- (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController{
+    return self.dataManager.rawCSVString;
+}
+
+// called to fetch data after an activity is selected. you can return nil
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType{
+    return self.dataManager.rawCSVString;
+}
+
 @end

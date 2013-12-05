@@ -20,7 +20,7 @@
 
 @end
 
-@interface ETViewController : UIViewController <ETBTLEManagerDataDelegate, ETDataManagerDelegate>
+@interface ETViewController : UIViewController <ETBTLEManagerDataDelegate, ETDataManagerDelegate,UIActivityItemSource>
 
 @property (nonatomic, assign)BOOL canConnect;
 @property (nonatomic, weak) id<ETViewControllerDelegate> delegate;
@@ -36,6 +36,8 @@
 - (IBAction)connectedSwitchFlipped:(id)sender;
 - (IBAction)clearViewTapGestureRecognized:(id)sender;
 - (IBAction)versionRequestButtonPressed:(id)sender;
+- (IBAction)flagButtonPressed:(id)sender;
+- (IBAction)exportButtonPressed:(id)sender;
 
 -(void) addDataStringToView:(NSString*)dataString;
 

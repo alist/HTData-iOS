@@ -200,15 +200,15 @@
  *  @discussion				This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a notification/indication.
  */
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
-    EXOLog(@"didUpdateValueForCharacteristic %@",characteristic);
+//    EXOLog(@"didUpdateValueForCharacteristic %@",characteristic);
     
     
     //NSDate *date = [NSDate date];
     NSData *data = [characteristic value];
     
-    NSString * dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSString * dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    EXOLog(@"Data: %@", dataString);
+//    EXOLog(@"Data: %@", dataString);
     
     [self.dataDelegate managerYieldedData:data withManager:self];
 }
