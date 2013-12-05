@@ -57,6 +57,9 @@ typedef enum{
 //this is the output of the rawCSV w/o labels
 @property (nonatomic, strong) NSMutableString* rawCSVString;
 
+//just keeps the last data points, about 50 of em' around
+@property (nonatomic, strong) NSMutableArray * uptoFiftyLastRawCSVRows;
+
 //these are the indexes of the CSV that should be broken out as their own array
 //NSNumber-NSIntegerNumber subtype
 @property (nonatomic, strong) NSSet * interestingIndexes;

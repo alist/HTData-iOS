@@ -24,6 +24,7 @@ static NSString * messageDelimiter = @"\n";
 -(void) newSession{
     self.rawCSVString = [@"" mutableCopy];
     self.indexedDataArrays = [@{} mutableCopy];
+    self.uptoFiftyLastRawCSVRows = [@[] mutableCopy];
 }
 
 -(void) feedData:(NSData*)data{
@@ -81,7 +82,13 @@ static NSString * messageDelimiter = @"\n";
         return;
     }
     
-    [dataString appendString:messageDelimiter]; //it has to be csv again, after all
+    //now add the datastring to display buffer
+    [self.uptoFiftyLastRawCSVRows addObject:[dataString copy]];
+    if (self.uptoFiftyLastRawCSVRows.count > 50){
+        [self.uptoFiftyLastRawCSVRows removeObjectAtIndex:0];
+    }
+    
+    [dataString appendString:messageDelimiter]; //it has to be csv again, after all, so add a new line
     [self.rawCSVString appendString:dataString];
     
     for (NSNumber * interestingIndex in self.interestingIndexes){

@@ -7,6 +7,7 @@
 //
 
 #import "ETViewController.h"
+#import "PerformSelectorWithDebounce.h"
 
 @interface ETViewController ()
 
@@ -105,13 +106,17 @@
 
 //ETDataManagerDelegate
 -(void)ETDataManagerDelegateDidUpdateData:(ETDataManager*)dataManager{
-    NSArray * lines = [dataManager.rawCSVString componentsSeparatedByString:@"\n"];
-    NSInteger max50LineCount = MIN(30, lines.count);
-    NSArray * lastLines = [lines subarrayWithRange:NSMakeRange(lines.count - max50LineCount, max50LineCount)];
+    [self performSelector:@selector(updateRawDataDisplay) withDebounceDuration:.15];
+
+}
+
+-(void) updateRawDataDisplay{
+    NSArray * lines = self.dataManager.uptoFiftyLastRawCSVRows;
+    NSInteger displayLineCount = MIN(30, lines.count);
+    NSArray * lastLines = [lines subarrayWithRange:NSMakeRange(lines.count - displayLineCount, displayLineCount)];
     NSString * lastLinesString = [lastLines componentsJoinedByString:@"\n"];
     
     self.outputView.text = lastLinesString;
-
 }
 
 //UIActivityItemSource //maybe not even needed
