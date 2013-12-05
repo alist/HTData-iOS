@@ -104,10 +104,8 @@
 }
 
 
-//ETDataManagerDelegate
--(void)ETDataManagerDelegateDidUpdateData:(ETDataManager*)dataManager{
-    [self performSelector:@selector(updateRawDataDisplay) withDebounceDuration:.15];
-
+-(void) displayGraph{
+    
 }
 
 -(void) updateRawDataDisplay{
@@ -117,6 +115,13 @@
     NSString * lastLinesString = [lastLines componentsJoinedByString:@"\n"];
     
     self.outputView.text = lastLinesString;
+}
+
+
+//ETDataManagerDelegate
+-(void)ETDataManagerDelegateDidUpdateData:(ETDataManager*)dataManager{
+    [self performSelector:@selector(updateRawDataDisplay) withDebounceDuration:.15];
+
 }
 
 //UIActivityItemSource //maybe not even needed
