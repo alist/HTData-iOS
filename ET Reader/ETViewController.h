@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ETBTLEManager.h"
 #import "ETDataManager.h"
+#import "GraphView.h"
 
 @class ETViewController;
 
@@ -31,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *outputView;
 @property (weak, nonatomic) IBOutlet UISwitch *connectedSwitch;
 
+@property (nonatomic, strong) GraphView * graphView;
+
 @property (nonatomic, strong) NSMutableString * displayString;
 
 - (IBAction)connectedSwitchFlipped:(id)sender;
@@ -40,5 +43,9 @@
 - (IBAction)exportButtonPressed:(id)sender;
 
 -(void) addDataStringToView:(NSString*)dataString;
+
+
+-(void)_updateRawDataDisplay;
+-(void)_updateGraphView;
 
 @end

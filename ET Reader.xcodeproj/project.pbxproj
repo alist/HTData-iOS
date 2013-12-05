@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7947630B184FB262008FF51D /* ETDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7947630A184FB262008FF51D /* ETDataManager.m */; };
 		7947630F18500E78008FF51D /* PerformSelectorWithDebounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7947630E18500E78008FF51D /* PerformSelectorWithDebounce.m */; };
+		7947631618501284008FF51D /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7947631518501284008FF51D /* GraphView.m */; };
 		7975A0141842EDD900CD4CCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0131842EDD900CD4CCC /* Foundation.framework */; };
 		7975A0161842EDD900CD4CCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0151842EDD900CD4CCC /* CoreGraphics.framework */; };
 		7975A0181842EDD900CD4CCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A0171842EDD900CD4CCC /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		7947630A184FB262008FF51D /* ETDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETDataManager.m; sourceTree = "<group>"; };
 		7947630D18500E78008FF51D /* PerformSelectorWithDebounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformSelectorWithDebounce.h; sourceTree = "<group>"; };
 		7947630E18500E78008FF51D /* PerformSelectorWithDebounce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformSelectorWithDebounce.m; sourceTree = "<group>"; };
+		7947631418501284008FF51D /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphView.h; path = DynamicGraphView/DynamicGraphView/GraphView.h; sourceTree = SOURCE_ROOT; };
+		7947631518501284008FF51D /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphView.m; path = DynamicGraphView/DynamicGraphView/GraphView.m; sourceTree = SOURCE_ROOT; };
 		7975A0101842EDD900CD4CCC /* ET Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ET Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7975A0131842EDD900CD4CCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7975A0151842EDD900CD4CCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +105,15 @@
 			name = "Other Logic";
 			sourceTree = "<group>";
 		};
+		794763131850125C008FF51D /* Exernal libs */ = {
+			isa = PBXGroup;
+			children = (
+				7947631418501284008FF51D /* GraphView.h */,
+				7947631518501284008FF51D /* GraphView.m */,
+			);
+			name = "Exernal libs";
+			sourceTree = "<group>";
+		};
 		7975A0071842EDD900CD4CCC = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 		7975A0191842EDD900CD4CCC /* ET Reader */ = {
 			isa = PBXGroup;
 			children = (
+				794763131850125C008FF51D /* Exernal libs */,
 				7947630C18500E69008FF51D /* Other Logic */,
 				79ECB9901843D40700078952 /* Views */,
 				7975A04D1842EED000CD4CCC /* BTLE Frameworks */,
@@ -308,6 +321,7 @@
 				7975A0201842EDD900CD4CCC /* main.m in Sources */,
 				7947630B184FB262008FF51D /* ETDataManager.m in Sources */,
 				7947630F18500E78008FF51D /* PerformSelectorWithDebounce.m in Sources */,
+				7947631618501284008FF51D /* GraphView.m in Sources */,
 				7975A0531842EFD300CD4CCC /* ETBTLEManager.m in Sources */,
 				7975A0241842EDD900CD4CCC /* ETAppDelegate.m in Sources */,
 			);

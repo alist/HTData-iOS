@@ -1,0 +1,3 @@
+[submodule "DynamicGraphView"]
+	path = DynamicGraphView
+	url = git@github.com:alist/DynamicGraphView.git

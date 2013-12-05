@@ -15,11 +15,17 @@
 
 @implementation ETViewController
 
+/* //orientation speicifc code
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
+        [self.view addSubview:self.graphView];
+    }else{
+        [self.graphView removeFromSuperview];
+    }
+} */
 
 
 -(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager{
-//    NSString * dataString = [[NSString alloc] initWithData:yieldedData encoding:NSUTF8StringEncoding];
-//    [self addDataStringToView:dataString];
     [self.dataManager feedData:yieldedData];
 }
 
@@ -34,6 +40,16 @@
         [_dataManager setCsvColumnCount:4];
     }
     return _dataManager;
+}
+
+
+-(GraphView*) graphView{
+    if (_graphView == nil){
+        _graphView = [[GraphView alloc] initWithFrame:CGRectMake(180, 70, 375, 240)];
+        [self.view addSubview:_graphView];
+    }
+    
+    return _graphView;
 }
 
 - (void)viewDidLoad
@@ -104,11 +120,8 @@
 }
 
 
--(void) displayGraph{
-    
-}
 
--(void) updateRawDataDisplay{
+-(void) _updateRawDataDisplay{
     NSArray * lines = self.dataManager.uptoFiftyLastRawCSVRows;
     NSInteger displayLineCount = MIN(30, lines.count);
     NSArray * lastLines = [lines subarrayWithRange:NSMakeRange(lines.count - displayLineCount, displayLineCount)];
@@ -117,10 +130,25 @@
     self.outputView.text = lastLinesString;
 }
 
+-(void) _updateGraphView{
+    NSArray * series = [[self.dataManager indexedDataArrays] objectForKey:@(2)];//this is series 2, for pressure
+    //each point is spaced equally if in active mode
+    
+    NSInteger displayPointCount = MIN(1000, series.count);
+    
+    NSMutableArray * floatedArray = [NSMutableArray array];
+    for (NSString* item in [series subarrayWithRange:NSMakeRange(series.count - displayPointCount, displayPointCount)]){
+        [floatedArray addObject:@(item.floatValue)];
+    }
+    
+    [self.graphView setArray:floatedArray];
+}
 
 //ETDataManagerDelegate
 -(void)ETDataManagerDelegateDidUpdateData:(ETDataManager*)dataManager{
-    [self performSelector:@selector(updateRawDataDisplay) withDebounceDuration:.15];
+    [self performSelector:@selector(_updateRawDataDisplay) withDebounceDuration:.15];
+    
+    [self performSelector:@selector(_updateGraphView) withDebounceDuration:.15];
 
 }
 
