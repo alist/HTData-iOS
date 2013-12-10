@@ -37,7 +37,7 @@
         [_dataManager setAllowFlags:TRUE];
         [_dataManager setInterestingIndexes:[NSSet setWithArray:@[@(1),@(2),@(3)]]];
         [_dataManager setDelegate:self];
-        [_dataManager setCsvColumnCount:4];
+        [_dataManager setCsvColumnCount:5];
     }
     return _dataManager;
 }
@@ -46,6 +46,8 @@
 -(GraphView*) graphView{
     if (_graphView == nil){
         _graphView = [[GraphView alloc] initWithFrame:CGRectMake(180, 70, 375, 240)];
+
+        [_graphView setManualY:1024];//this is the 10bit dac from the arduino
         [self.view addSubview:_graphView];
     }
     
