@@ -8,6 +8,7 @@
 
 #import "ETViewController.h"
 #import "PerformSelectorWithDebounce.h"
+#import <AudioToolbox/AudioServices.h>
 
 @interface ETViewController ()
 
@@ -15,14 +16,14 @@
 
 @implementation ETViewController
 
-/* //orientation speicifc code
+//orientation speicifc code
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     if(UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])){
         [self.view addSubview:self.graphView];
     }else{
         [self.graphView removeFromSuperview];
     }
-} */
+}
 
 
 -(void ) managerYieldedData:(NSData*)yieldedData withManager:(ETBTLEManager*)manager{
@@ -37,7 +38,7 @@
         [_dataManager setAllowFlags:TRUE];
         [_dataManager setInterestingIndexes:[NSSet setWithArray:@[@(1),@(2),@(3)]]];
         [_dataManager setDelegate:self];
-        [_dataManager setCsvColumnCount:5];
+        [_dataManager setCsvColumnCount:6];
     }
     return _dataManager;
 }
@@ -48,7 +49,7 @@
         _graphView = [[GraphView alloc] initWithFrame:CGRectMake(180, 70, 375, 240)];
 
         [_graphView setManualY:1024];//this is the 10bit dac from the arduino
-        [self.view addSubview:_graphView];
+//        [self.view addSubview:_graphView];
     }
     
     return _graphView;
@@ -89,6 +90,7 @@
 
 - (IBAction)flagButtonPressed:(id)sender {
     [self.dataManager setNextDataPointFlag:ETDataFlagNormal];
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 - (IBAction)exportButtonPressed:(id)sender {

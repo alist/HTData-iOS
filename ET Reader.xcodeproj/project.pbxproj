@@ -27,6 +27,7 @@
 		7975A0421842EDD900CD4CCC /* ET_ReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0411842EDD900CD4CCC /* ET_ReaderTests.m */; };
 		7975A04C1842EE5C00CD4CCC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */; };
 		7975A0531842EFD300CD4CCC /* ETBTLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0521842EFD300CD4CCC /* ETBTLEManager.m */; };
+		79F198BC1857D56500059F2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F198BB1857D56500059F2C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		7975A0511842EFD300CD4CCC /* ETBTLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBTLEManager.h; sourceTree = "<group>"; };
 		7975A0521842EFD300CD4CCC /* ETBTLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETBTLEManager.m; sourceTree = "<group>"; };
+		79F198BB1857D56500059F2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F198BC1857D56500059F2C /* AudioToolbox.framework in Frameworks */,
 				7975A0161842EDD900CD4CCC /* CoreGraphics.framework in Frameworks */,
 				7975A0181842EDD900CD4CCC /* UIKit.framework in Frameworks */,
 				7975A04C1842EE5C00CD4CCC /* CoreBluetooth.framework in Frameworks */,
@@ -136,6 +139,7 @@
 		7975A0121842EDD900CD4CCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79F198BB1857D56500059F2C /* AudioToolbox.framework */,
 				7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */,
 				7975A0131842EDD900CD4CCC /* Foundation.framework */,
 				7975A0151842EDD900CD4CCC /* CoreGraphics.framework */,
