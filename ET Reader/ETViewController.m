@@ -123,7 +123,7 @@
 
 -(void) _updateRawDataDisplay{
     NSArray * lines = self.dataManager.uptoFiftyLastRawCSVRows;
-    NSInteger displayLineCount = MIN(30, lines.count);
+    NSInteger displayLineCount = MIN(25, lines.count);
     NSArray * lastLines = [lines subarrayWithRange:NSMakeRange(lines.count - displayLineCount, displayLineCount)];
     NSString * lastLinesString = [lastLines componentsJoinedByString:@"\n"];
     
