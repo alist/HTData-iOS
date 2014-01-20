@@ -31,7 +31,8 @@ static NSString * messageDelimiter = @"\n";
     //we're all utf8 here, right guys?
     NSString * dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     [self.bufferString appendString:dataString];
-    
+    EXOLog(@"DATA STRING: %@",dataString);
+
     [self _parseBuffer];
 }
 

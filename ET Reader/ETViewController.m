@@ -81,7 +81,7 @@
     self.triggerThreshold = threshold; //default threshold
     
     [self.triggerThresholdLabel setText:[NSString stringWithFormat:NSLocalizedString(@"threshold: %f", @"threshold string"), self.triggerThreshold]];
-    self.triggerThresholdSlider.value = self.triggerThreshold/100.0;
+    self.triggerThresholdSlider.value = self.triggerThreshold/self.maxTrigger;
     
 }
 
@@ -99,12 +99,14 @@
 - (void)viewDidLoad
 {
     self.displayString = [@"" mutableCopy];
+ 
+    self.maxTrigger = 1025;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self setupAudioSession];
     
-    [self updateTriggerThresholdWithValue:1];
+    [self updateTriggerThresholdWithValue:self.maxTrigger];
     self.enableTriggers = TRUE;
 }
 
@@ -156,7 +158,7 @@
 }
 
 - (IBAction)triggerThresholdSliderChanged:(id)sender {
-    [self updateTriggerThresholdWithValue: [self.triggerThresholdSlider value]*100];
+    [self updateTriggerThresholdWithValue: [self.triggerThresholdSlider value]*self.maxTrigger];
 }
 - (IBAction)makeSessionActiveButtonPressed:(id)sender {
     [self.btleManager sendDataToPeripheral:[@"startSession;" dataUsingEncoding:NSUTF8StringEncoding ]];

@@ -34,6 +34,7 @@
 @property (nonatomic, strong) AVAudioSession * triggerAudioSession;
 
 @property (nonatomic, assign) double triggerThreshold;
+@property (nonatomic, assign) double maxTrigger;
 
 @property (strong, nonatomic) ETBTLEManager* btleManager;
 @property (strong, nonatomic) ETDataManager * dataManager;
