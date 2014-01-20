@@ -28,6 +28,7 @@
 		7975A04C1842EE5C00CD4CCC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7975A04B1842EE5C00CD4CCC /* CoreBluetooth.framework */; };
 		7975A0531842EFD300CD4CCC /* ETBTLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7975A0521842EFD300CD4CCC /* ETBTLEManager.m */; };
 		79F198BC1857D56500059F2C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F198BB1857D56500059F2C /* AudioToolbox.framework */; };
+		79F198BF185A87FF00059F2C /* Narrative-Jibberish-goodpoint.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79F198BE185A87FF00059F2C /* Narrative-Jibberish-goodpoint.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		7975A0511842EFD300CD4CCC /* ETBTLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBTLEManager.h; sourceTree = "<group>"; };
 		7975A0521842EFD300CD4CCC /* ETBTLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETBTLEManager.m; sourceTree = "<group>"; };
 		79F198BB1857D56500059F2C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		79F198BE185A87FF00059F2C /* Narrative-Jibberish-goodpoint.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Narrative-Jibberish-goodpoint.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		7975A01A1842EDD900CD4CCC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				79F198BD185A87DE00059F2C /* Sounds */,
 				7975A01B1842EDD900CD4CCC /* ET Reader-Info.plist */,
 				7975A01C1842EDD900CD4CCC /* InfoPlist.strings */,
 				7975A01F1842EDD900CD4CCC /* main.m */,
@@ -213,6 +216,14 @@
 				7975A02C1842EDD900CD4CCC /* ETViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		79F198BD185A87DE00059F2C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				79F198BE185A87FF00059F2C /* Narrative-Jibberish-goodpoint.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "ET Reader" */;
+			buildConfigurationList = 7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "HT-Data" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -302,6 +313,7 @@
 				7975A02A1842EDD900CD4CCC /* Main_iPad.storyboard in Resources */,
 				7975A02F1842EDD900CD4CCC /* Images.xcassets in Resources */,
 				7975A0271842EDD900CD4CCC /* Main_iPhone.storyboard in Resources */,
+				79F198BF185A87FF00059F2C /* Narrative-Jibberish-goodpoint.wav in Resources */,
 				7975A01E1842EDD900CD4CCC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "ET Reader" */ = {
+		7975A00B1842EDD900CD4CCC /* Build configuration list for PBXProject "HT-Data" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7975A0431842EDD900CD4CCC /* Debug */,

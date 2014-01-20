@@ -17,7 +17,7 @@
                BlueprintIdentifier = "7975A00F1842EDD900CD4CCC"
                BuildableName = "ET Reader.app"
                BlueprintName = "ET Reader"
-               ReferencedContainer = "container:ET Reader.xcodeproj">
+               ReferencedContainer = "container:HT-Data.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "7975A0331842EDD900CD4CCC"
                BuildableName = "ET ReaderTests.xctest"
                BlueprintName = "ET ReaderTests"
-               ReferencedContainer = "container:ET Reader.xcodeproj">
+               ReferencedContainer = "container:HT-Data.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "7975A00F1842EDD900CD4CCC"
             BuildableName = "ET Reader.app"
             BlueprintName = "ET Reader"
-            ReferencedContainer = "container:ET Reader.xcodeproj">
+            ReferencedContainer = "container:HT-Data.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "7975A00F1842EDD900CD4CCC"
             BuildableName = "ET Reader.app"
             BlueprintName = "ET Reader"
-            ReferencedContainer = "container:ET Reader.xcodeproj">
+            ReferencedContainer = "container:HT-Data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "7975A00F1842EDD900CD4CCC"
             BuildableName = "ET Reader.app"
             BlueprintName = "ET Reader"
-            ReferencedContainer = "container:ET Reader.xcodeproj">
+            ReferencedContainer = "container:HT-Data.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
