@@ -36,9 +36,9 @@
     if (_dataManager == nil){
         _dataManager = [[ETDataManager alloc] init];
         [_dataManager setAllowFlags:TRUE];
-        [_dataManager setInterestingIndexes:[NSSet setWithArray:@[@(1),@(2),@(3),@(4),@(5)]]];
+        [_dataManager setInterestingIndexes:[NSSet setWithArray:@[@(0)]]];
         [_dataManager setDelegate:self];
-        [_dataManager setCsvColumnCount:5];
+        [_dataManager setCsvColumnCount:1];
     }
     return _dataManager;
 }
@@ -192,7 +192,7 @@
     //4 for attention
     //5 low beta higher when you're alert and focused
     //6 low gamma multi-sensory processing
-    NSArray * series = [[self.dataManager indexedDataArrays] objectForKey:@(4)];
+    NSArray * series = [[self.dataManager indexedDataArrays] objectForKey:@(0)];
     //each point is spaced equally if in active mode
     
     NSInteger displayPointCount = MIN(1000, series.count);
@@ -208,7 +208,7 @@
 
 -(void)_checkDataForTriggers{
     
-    NSNumber * triggerSeries = @(3);//4=attention
+    NSNumber * triggerSeries = @(0);//4=attention
     
     NSArray * series = [[self.dataManager indexedDataArrays] objectForKey:triggerSeries];
     
